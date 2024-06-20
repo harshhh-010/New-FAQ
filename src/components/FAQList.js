@@ -5,7 +5,7 @@ import { Accordion } from 'react-bootstrap';
 const FAQList = () => {
   const faqs = useSelector((state) => state.faqs); // useSelector is hook to access the state from the store
   const searchQuery = useSelector((state) => state.searchQuery);
-  const filterFAQs = faqs.filter(faq => faq.question.includes(searchQuery)); // filter method to compare the search input and faq question
+  const filterFAQs = faqs.filter(faq => faq.question.toLowerCase() .includes(searchQuery.toLowerCase())); // filter method to compare the search input and faq question
 
   return (
     <Accordion defaultActiveKey="0">

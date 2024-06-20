@@ -11,7 +11,10 @@ const AddFAQModal = ({ show, handleClose }) => {
   const handleSubmit = () => {
     dispatch(addFAQ(question, answer));
     handleClose();
+    setQuestion("");
+    setAnswer("");
   };
+  
 
   return (
     <Modal show={show} onHide={handleClose}>
